@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Request
+comments: true
 permalink: /request/
 comments: true
 ---

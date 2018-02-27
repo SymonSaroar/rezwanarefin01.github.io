@@ -2,7 +2,7 @@
 layout: base
 ---
 
-{% include fbcomment.html %}
+{% if page.comments %} {% include fbcomment.html %} {% endif %}
 
 {% include header.html type="post" %}
 
@@ -64,8 +64,9 @@ layout: base
       </ul>
 
       <!-- Include Fb Comments -->
+      {% if page.comments %}
       <div class="fb-comments" data-num-posts="4" data-width="715" data-href="{{ site.url }}{{ page.url }}"></div>
-
+      {% endif %}
     </div>
   </div>
 </div>

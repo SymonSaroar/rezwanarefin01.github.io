@@ -2,6 +2,8 @@
 layout: base
 ---
 
+{% if page.comments %} {% include fbcomment.html %} {% endif %}
+
 {% include header.html type="page" %}
 
 <div class="container" role="main">
@@ -9,7 +11,7 @@ layout: base
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       {{ content }}
 	    {% if page.comments %}
-        <div class="fb-comments" data-href="{{ site.url }}{{ page.url }}"></div>
+        <div class="fb-comments" data-num-posts="4" data-width="715" data-href="{{ site.url }}{{ page.url }}"></div>
 	    {% endif %}
     </div>
   </div>
