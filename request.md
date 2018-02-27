@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Request
-permalink: /Request/
+permalink: /request/
 comments: true
 ---
 
