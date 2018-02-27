@@ -6,7 +6,7 @@ layout: post
 comments: true
 author: RezwanArefin01
 category: [Data Structure]
-feature: '/images/mos-algo/feature.png'
+feature: '/img/mos-algo/feature.png'
 permalink: '/posts/block-decomposition-01'
 ---
 MO's Algo জিনিসটা দিন দিন জনপ্রিয় হয়ে উঠছে। দেখা যাক এই MO's Algo কি।     
