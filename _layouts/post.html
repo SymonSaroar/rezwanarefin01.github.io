@@ -2,6 +2,8 @@
 layout: base
 ---
 
+{% include fbcomment.html %}
+
 {% include header.html type="post" %}
 
 <div class="container">
@@ -60,9 +62,9 @@ layout: base
         </li>
         {% endif %}
       </ul>
-      
+
       <!-- Include Fb Comments -->
-      <div class="fb-comments" data-href="{{ site.url }}{{ page.url }}"></div>
+      <div class="fb-comments" data-num-posts="4" data-width="715" data-href="{{ site.url }}{{ page.url }}"></div>
 
     </div>
   </div>
