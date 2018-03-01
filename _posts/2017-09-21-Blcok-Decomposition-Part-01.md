@@ -132,7 +132,7 @@ int main() {
 
 **MO's Ordering আর Complexity Analysis সম্পুর্ণ না বুঝা পর্যন্ত বারবার পড়ার অবুরধ রইল**
 
-#### **MO's Ordering**
+### **MO's Ordering**
 MO's Ordering এর মাধ্যমে এইসব সমস্যা দুর করা যায়।
 MO's Order এ সমস্ত Query কে $l$ বা $r$ এর উপরে Based করে Sort করা হয় না।  
 
@@ -200,7 +200,7 @@ $$\mid 0 - 1\mid + \mid 0 - 4\mid + \\ \mid 1 - 3 \mid + \mid 4 - 5\mid + \\ \mi
 
 কিন্তু এত কম লাগল কেন? কারণ একটা Block এর সব Query এর জন্য আমাদের Right pointer মাত্র একবার $0$ থেকে $15$ তে গেছে। তাই Right pointer এর Total movement = $15$, বা $O(n)$। আর $2$ টা Query এর Left Side এর পার্থক্য একটা Block এ সর্বোচ্চ $O(k)$. উপরের উদাহরণ এ ২টা পাশাপাশি Query এর জন্য তাই Left pointer সর্বোচ্চ $4$ বার Move করছে।   
 
-#### **Complexity Analysis**
+### **Complexity Analysis**
 তাহলে মোট Complexity বের করা যাক।   
 
 আমাদের Complexity হবে $O(\text{Left Pointer Move + Right Pointer Move})$    
@@ -228,7 +228,7 @@ $$\frac{n^2}{k} = nk \\ \implies n^2 = nk^2 \\ \implies k^2 = n \\ \implies k = 
 
 **Note**: আমরা ধরে নিছিলাম $Q = O(n)$। তবে কিছু Problem এ এরকম নাও হতে পারে। $N$ অনেক বড়, $Q$ ছোট অথবা $Q$ বড় কিন্তু $N$ ছোট থাকতে পারে। সেক্ষেত্রেও $k = \sqrt{n}$ নিলে সমস্যা হইয়ার কথা না। কিন্তু সমস্যা হলে $k = \sqrt{\frac{n^2}{Q}}$ নিয়ে চেষ্টা করা যেতে পারে। মূলত $k$ এর এই মানের জন্যই MO's Ordering Best Performance দেয়। :slightly_smiling_face:
 
-#### **Sample Implementation**
+### **Sample Implementation**
 একটু আগে যেই Code টা দেওয়া হল সেইটাতেই মাত্র আর ২টা Line Add করলেই হয়ে যাবে। একটা Compare Function লিখতে হবে যেইটা ২টা Query এর মধ্যে কে আগে হবে সেইটা বলে দেবে। যদি ২টা আলাদা Block এ হয় তাহলে যে আগে সে আগে হবে। আর ২টা একই Block এর বলে যার Right Side আগে আছে সে আগে হবে। এর পরে Query Process শুরু করার আগে Sort করে নিলেই হল। দেখা যাক -
 
 ```cpp
@@ -271,10 +271,11 @@ int main() {
 
 MO's Ordering কত Powerful!! খালি একটা Ordering করেই $O(QN)$ এর Solution কে $O(Q \sqrt{N})$ করে ফেলল!! :wink:
 
-#### **Problem Solving**
+### **Problem Solving**
 MO's Algo এর Problem গুলা সাধারণত Codeforces এ Div1C/D তে থাকে। কিন্তু MO' Algo জানলে Solution হয় খুবই সোজা। কিছু প্রবলেম দেখা যাক -
 
-**Problem 1:** [DQUERY](https://www.spoj.com/problems/DQUERY/): সংক্ষেপে প্রবলেম টা হল -  
+#### **Problem 1:**
+[DQUERY](https://www.spoj.com/problems/DQUERY/): সংক্ষেপে প্রবলেম টা হল -  
 
 > $n$ size এর একটা Array আছে। $Q$ টা Range query আছে। একটা $[l, r]$ range এর query এর উত্তর হল $A[l \cdots r\]$ range এ কয়টা Distinct Number আছে।
 
@@ -295,8 +296,9 @@ void remove(int x) {
   if(cnt[x] == 0) ans--;
 }
 ```
-
-**Problem 2:** [CF 86D](http://codeforces.com/problemset/problem/86/D) (Div1D :scream:): সংক্ষেপে প্রবলেম টা হল -
+<br/>
+#### **Problem 2:**
+[CF 86D](http://codeforces.com/problemset/problem/86/D) (Div1D :scream:): সংক্ষেপে প্রবলেম টা হল -
 
 > $n$ size এর একটা Array আছে। $Q$ টা Range query আছে। একটা $[l, r]$ range এর query এর উত্তর হল প্রত্যেক $\sum_{x = 1}^{\infty} C_x \times C_x \times x$. এখানে $C_x = x$, $A[l \cdots r]$ range এর মধ্যে কয়বার আসছে। <br> যেমনঃ $\[l, r\]$ range এর সংখ্যা গুলা $\[1,1,3,2,3,2,2,1\]$ হলে উত্তর হবে $C_1 \times C_1 \times 1 +C_2 \times C_2 \times 2 + C_3 \times C_3 \times 3 + \cdots$ $= (3\times 3\times 1) + (3\times 3\times 2) + (2\times 2\times 3) = 9 + 18 + 12 = 39$
 
@@ -318,8 +320,9 @@ void remove(int x) {
   sum += cnt[a[x]] * cnt[a[x]] * a[x];
 }
 ```
-
-**Problem 3:** [Sherlock and Inversions](https://www.hackerearth.com/practice/data-structures/advanced-data-structures/fenwick-binary-indexed-trees/practice-problems/algorithm/sherlock-and-inversions/): সংক্ষেপে প্রবলেম টা হল:  
+<br/>
+#### **Problem 3:**
+[Sherlock and Inversions](https://www.hackerearth.com/practice/data-structures/advanced-data-structures/fenwick-binary-indexed-trees/practice-problems/algorithm/sherlock-and-inversions/): সংক্ষেপে প্রবলেম টা হল:  
 > $n$ size এর একটা Array আছে। $Q$ টা Range query আছে। একটা $[l, r]$ range এর query এর উত্তর হল কয়টা pair $(i, j)$ আছে যেন $l \leq i \leq j \leq r$ এবং $a_i > a_j$। মানে Inversion আরকি।
 
 এইটার Solution একটু কঠিন লাগতে পারে। Inversion Problem সম্পর্কে খুব ভাল ধারনা থাকা লাগবে।
@@ -332,14 +335,17 @@ Right Side এ একটা Element বেশি থাকলে সেইটা
 একই ভাবে বাকি Case গুলা করা যাবে। Left side সামনে বা পিছনে করলে কি হয়, Right side সামনে পিছনে করলে কি হয়।  
 Inversion Problem সম্পর্কে ভাল ধারনা থাকলে আশাকরি এইটা Solve করতে পারবে সবাই :slightly_smiling_face:  
 
-**Problem 4:** [CF 220B](http://codeforces.com/problemset/problem/220/B): এইটা তুলনামূলক সহজ Problem, উপরের গুলা Solve করে থাকে এইটা সবাই পারবে আসা করি।
+#### **Problem 4:**
+[CF 220B](http://codeforces.com/problemset/problem/220/B): এইটা তুলনামূলক সহজ Problem, উপরের গুলা Solve করে থাকে এইটা সবাই পারবে আসা করি।
 
-**Problem 5:** [Substring Count](https://www.hackerearth.com/problem/algorithm/substrings-count-3/): সংক্ষেপে প্রবলেমটা হল -
+#### **Problem 5:**
+[Substring Count](https://www.hackerearth.com/problem/algorithm/substrings-count-3/): সংক্ষেপে প্রবলেমটা হল -
 > একটা $n$ Length এর Array of string $A$ দেওয়া আছে। Query গুলা হল Array এর $[l, r]$ index range এ কয়টা String এর মধ্যে আরেকটা Given String, Substring আকারে আছে।
 
 এইটা অনেক ভাব সমাধান করা যায়। একটা উপায় হল Hashing করা, Hash গুলার Count কমান/বাড়ান। এর পরে Answer বের করার সময় ওই Hash কয়বার আসছে দেখা। তবে ভাল Implementation না হলে TLE হবে।
 
 আরেকটা উপায় হল `add/remove` function এ কোন String Related DS এ Insert/Delete করা যাতে একটা String কয়বার Substring হিসাবে আসছে সেইটা তাড়াতাড়ি বের করা যায়।   
+<br/>
 
 ### **MO's Algo With Updates**
 **CAUTION: PRO STUFF. Solve more MO's algo problem before trying to understand this. Also read the MO's algo complexity part again if you have some gap.**
@@ -534,7 +540,7 @@ $$nk = \frac{n^3}{k^2} \\ \implies n^3 = nk^3 \\ \implies n^2 = k^3 \\ \implies 
 তাহলে প্রত্যেকটা Query এর জন্য Overall Time লাগবে $O(n^{\frac{2}{3}})$    
 $Q = O(n)$ হলে মোট $O(n \times n^{\frac{2}{3}}) = O(n^{\frac{5}{3}})$ [ Nyc Complexity ]
 
-#### **Implementation Practice**
+### **Implementation Practice**
 Implementation Practice এর জন্য এই প্রবলেম টা Submit করে দেখতে পারেন - [HRSIAM](http://www.spoj.com/problems/HRSIAM/).  
 
 MO's Algo with Updates Problem গুলা খুবি Rare. আর সাধারণত এরকম সব Problem ই Boss Problem হয়।  Ongoing Contest এ লাগলে Div1D/E তে লাগতে পারে। :stuck_out_tongue:

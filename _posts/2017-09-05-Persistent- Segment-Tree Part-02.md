@@ -10,7 +10,7 @@ permalink: '/posts/persistent-segment-tree-02/'
 ---
 
 [পূর্বের পর্বে]({{ site.baseurl }}/posts/persistent-segment-tree-01) Persistent Segment Tree এর Basic Idea নিয়ে বলেছিলাম। আজকে এর কিছু Basic Problem নিয়ে অলোচনা করব।
-#### **Problem 1**
+### **Problem 1**
 > You are given an array with $N$ elements. You need to do $Q$ queries in form - <br/>
 `l r k`: Count how many numbers from index $l$ to $r$ in the array is less than $k$.
 
@@ -44,7 +44,7 @@ Problem টা সহজেই Merge Sort Tree দিয়ে $O(\log^2 n)$ Comple
 সমাধান শেষ।
 এইটার Implementation করা সোজাই। আশাকরি সবাই করতে পারব। পরবর্তি প্রবলেম এ এই Trick টা কাজে লাগবে।
 
-#### **Problem 2**
+### **Problem 2**
 > You are given an array with $N$ distinct elements. You need to do $Q$ queries in form - <br/>
 `l r k`: What will be the $k^{th}$ number if elements from index $l$ to $r$ was sorted?
 
@@ -115,7 +115,7 @@ $$\{1,0,1,0,1,0,1,0,0,1\} -\{1,0,0,0,1,0,0,0,0,0\} = \{0,0,1,0,0,0,1,0,0,1\}$$
 
 এখন এই Solution এর Complexity $O(\log n)$
 
-#### **Implementation**
+### **Implementation**
 Implementation না দেখার অনুরোধ রইল। নিজে চেষ্টা করলেই সম্ভব এইটা Code করা আমি মনে করি। তার পরেও না পারলে Code দেখা যেতে পারে।
 
 ```cpp
