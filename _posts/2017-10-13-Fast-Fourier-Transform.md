@@ -6,7 +6,7 @@ comments: true
 author: RezwanArefin01
 category: [Discrete Math]
 share-img: '/img/fft/feature.png'
-permalink: '/posts/fast-fourier-transform'
+permalink: '/posts/fast-fourier-transform/'
 ---
 
 আজকে Fast Fourier Transform নিয়ে লিখব। Fast Fourier Transform মূলত Polynomial Multiplication এর জন্য ব্যবহার করা হয়। এই Tutorial এর মূল উদ্দেশ্য আসলে সেটাই।       
