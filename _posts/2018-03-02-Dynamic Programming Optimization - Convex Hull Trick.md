@@ -5,8 +5,8 @@ layout: post
 comments: true
 author: RezwanArefin01
 category: [Dynamic Programming, Data Structure]
+share-img: '/img/cht/feature.png'
 permalink: '/posts/convex-hull-trick'
-share-img: /img/cht/feature.png
 ---
 Convex Hull Trick (DP Optimization), সংক্ষেপে CHT নামটা হয়ত অনেকেই শুনে থাকবেন। সবার মনেই প্রথম প্রশ্ন জাগে "আমি তো Convex Hull ই পারি না, তাহলে CHT শিখব কি করে :thinking:"। আসলে Geometry এর Convex Hull আর Dynamic Programming এর Convex Hull Trick আসলে ২টা একেবারেই ভিন্ন জিনিস।   
 
