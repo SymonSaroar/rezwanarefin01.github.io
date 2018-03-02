@@ -21,7 +21,7 @@ title: 'Category Index'
         &nbsp;{{- cat -}}&nbsp;({{site.categories[cat].size}})
     </h2>
     <div class="post-list">
-        {%- for post in site.categories[cat] -%}
+        {%- for post in site.categories[cat] reversed -%}
             <div class="category-entry">
                 <a href="{{- site.url -}}{{- post.url -}}">{{- post.title -}}</a>
                 <div class="entry-date">
