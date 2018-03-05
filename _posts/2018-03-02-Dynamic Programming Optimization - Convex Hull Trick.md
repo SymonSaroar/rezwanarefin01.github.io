@@ -279,8 +279,6 @@ int query(ll x) {
 3. Slope decreasing, query maximum - তাহলে Query point গুলা হতে হবে decreasing.
 4. Slope increasing, query minimum - তাহলে Query point গুলা হতে হবে decreasing.
 
-
-
 ### **Implementation Practice**
 Direct CHT Implement করে এখানে Submit করে দেখতে পারেন - [CHTPRAC - CHT Practice](http://www.spoj.com/problems/CHTPRAC/). একই সাথে ৪টা Variation ই Test করে দেখতে পারবেন। :slightly_smiling_face:     
 Implement করতে সমস্যা হলে নিচে Comment এ জানাতে পারেন। (FB Account থাকলেই Comment করা যাবে)।   
