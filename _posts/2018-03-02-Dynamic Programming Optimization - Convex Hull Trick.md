@@ -269,7 +269,7 @@ int query(ll x) {
 
 এইটার Complexity amortized। কারণ এইখানে `ptr` একটা Query তে মাত্র ১ বার সরতে পারে, আবার একদম শেষেও চলে যেতে পারি। কিন্তু আমরা জানি যে আমাদের Line $O(n)$ টা আছে। তাই আমাদের `ptr` ও সমস্ত Query মিলিয়ে $O(n)$ এর বেশি সরতে পারবে না। এই জন্য এইটা $O(1)$ Amortized Complexity।  
 
-এখানে উল্লেখ্য যে এই Approach 3 কিন্তু উপরে বলা ৪টা Variation এর সব গুলাতে কাজ করবে না। যেইগুলাতে Line Number কম হলে তার Intersection Point আগে থাকবে শুধু সেইখানে এইটা কাজ করবে। অর্থাৎ উপরে বলা Variation 1 এবং 3 এ কাজ করবে এই Approach। কিন্তু বাকি গুলাতে যেই Line এর Index সবার আগে, তার সাথে Intersection টা সবার পরে হয়, যদি $x$ axis অনুযায়ী Sort করি আমরা। তাই ওগুলাতে এইটা ব্যবহার করা যাবে না।      
+এখানে উল্লেখ্য যে এই Approach 3 কিন্তু উপরে বলা ৪টা Variation এর সব গুলাতে কাজ করবে না। যেইগুলাতে Line এর Index আগে থাকলে তার Intersection Point ও আগে থাকবে, শুধু সেইখানে এইটা কাজ করবে। অর্থাৎ, উপরে বলা Variation 1(Slope decreasing, minimum query) এবং 3(Slope increasing, maximum query) তে কাজ করবে এই Approach। কিন্তু বাকি গুলাতে যেইখানে Line এর Index সবার আগে, তার সাথে Intersection টা সবার পরে হয় ($x$ axis অনুযায়ী), তাই ওগুলাতে এইটা ব্যবহার করা যাবে না।      
 
 ### **Implementation Practice**
 Direct CHT Implement করে এখানে Submit করে দেখতে পারেন - [CHTPRAC - CHT Practice](http://www.spoj.com/problems/CHTPRAC/). একই সাথে ৪টা Variation ই Test করে দেখতে পারবেন। :slightly_smiling_face:     
