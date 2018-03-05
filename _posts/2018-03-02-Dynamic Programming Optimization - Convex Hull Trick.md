@@ -267,7 +267,9 @@ int query(ll x) {
 ```
 এইখানে শুরুতে `if(ptr >= m.size()) ptr = m.size() - 1` দেওয়ার কারণ হল যে, আমরা Hull এ নতুন Query করার সাথে সাথে Line add করার কারণে শেষের দিক থেকে কিছু Line বাদ হয়ে যেতে পারে। তখন আমরা শেষ Line টাতে `ptr` নিয়ে যাব।   
 
-এইটার Complexity amortized। কারণ এইখানে `ptr` একটা Query তে মাত্র ১ বার সরতে পারে, আবার একদম শেষেও চলে যেতে পারি। কিন্তু আমরা জানি যে আমাদের Line $O(n)$ টা আছে। তাই আমাদের `ptr` ও সমস্ত Query মিলিয়ে $O(n)$ এর বেশি সরতে পারবে না। এই জন্য এইটা $O(1)$ Amortized Complexity।   
+এইটার Complexity amortized। কারণ এইখানে `ptr` একটা Query তে মাত্র ১ বার সরতে পারে, আবার একদম শেষেও চলে যেতে পারি। কিন্তু আমরা জানি যে আমাদের Line $O(n)$ টা আছে। তাই আমাদের `ptr` ও সমস্ত Query মিলিয়ে $O(n)$ এর বেশি সরতে পারবে না। এই জন্য এইটা $O(1)$ Amortized Complexity।  
+
+এখানে উল্লেখ্য যে এই Approach 3 কিন্তু উপরে বলা ৪টা Variation এর সব গুলাতে কাজ করবে না। যেইগুলাতে Line Number কম হলে তার Intersection Point আগে থাকবে শুধু সেইখানে এইটা কাজ করবে। অর্থাৎ উপরে বলা Variation 1 এবং 3 এ কাজ করবে এই Approach। কিন্তু বাকি গুলাতে যেই Line এর Index সবার আগে, তার সাথে Intersection টা সবার পরে হয়, যদি $x$ axis অনুযায়ী Sort করি আমরা। তাই ওগুলাতে এইটা ব্যবহার করা যাবে না।      
 
 ### **Implementation Practice**
 Direct CHT Implement করে এখানে Submit করে দেখতে পারেন - [CHTPRAC - CHT Practice](http://www.spoj.com/problems/CHTPRAC/). একই সাথে ৪টা Variation ই Test করে দেখতে পারবেন। :slightly_smiling_face:     
