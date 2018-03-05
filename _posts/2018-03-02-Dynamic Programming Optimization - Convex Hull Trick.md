@@ -269,7 +269,17 @@ int query(ll x) {
 
 এইটার Complexity amortized। কারণ এইখানে `ptr` একটা Query তে মাত্র ১ বার সরতে পারে, আবার একদম শেষেও চলে যেতে পারি। কিন্তু আমরা জানি যে আমাদের Line $O(n)$ টা আছে। তাই আমাদের `ptr` ও সমস্ত Query মিলিয়ে $O(n)$ এর বেশি সরতে পারবে না। এই জন্য এইটা $O(1)$ Amortized Complexity।  
 
-এখানে উল্লেখ্য যে এই Approach 3 কিন্তু উপরে বলা ৪টা Variation এর সব গুলাতে কাজ করবে না। যেইগুলাতে Line এর Index আগে থাকলে তার Intersection Point ও আগে থাকবে, শুধু সেইখানে এইটা কাজ করবে। অর্থাৎ, উপরে বলা Variation 1(Slope decreasing, minimum query) এবং 3(Slope increasing, maximum query) তে কাজ করবে এই Approach। কিন্তু বাকি গুলাতে যেইখানে Line এর Index সবার আগে, তার সাথে Intersection টা সবার পরে হয় ($x$ axis অনুযায়ী), তাই ওগুলাতে এইটা ব্যবহার করা যাবে না।      
+এখানে উল্লেখ্য যে এই Approach 3 কিন্তু উপরে বলা ৪টা Variation এর সব গুলাতে কাজ করবে না। যেইগুলাতে Line এর Index আগে থাকলে তার Intersection Point ও আগে থাকবে, শুধু সেইখানে এইটা কাজ করবে। অর্থাৎ, উপরে বলা Variation 1(Slope decreasing, minimum query) এবং 3(Slope increasing, maximum query) তে কাজ করবে এই Approach। কিন্তু বাকি গুলাতে যেইখানে Line এর Index সবার আগে, তার সাথে Intersection টা সবার পরে হয় ($x$ axis অনুযায়ী), তাই ওগুলাতে এইটা ব্যবহার করা যাবে না।       
+
+তবে হ্যাঁ, এই Approach আমরা ওইগুলাতে, মানে Variation 2, 4 এ ব্যবহার করতে পারব, যদি Query Decreasing হয়, মানে $x_i \geq x_{i+1}$ হয় Query তে। কারণ সামনের দিকের Line গুলা বড় $x$ এর জন্য Optimal value দেবে।     
+
+এই Approach কোথায় কোথায় ব্যবহার করা যাবে সংক্ষেপে মনে রাখার জন্য -   
+1. Slope decreasing, query minimum - তাহলে Query point গুলা হতে হবে increasing.
+2. Slope increasing, query maximum - তাহলে Query point গুলা হতে হবে increasing.
+3. Slope decreasing, query maximum - তাহলে Query point গুলা হতে হবে decreasing.
+4. Slope increasing, query minimum - তাহলে Query point গুলা হতে হবে decreasing.
+
+
 
 ### **Implementation Practice**
 Direct CHT Implement করে এখানে Submit করে দেখতে পারেন - [CHTPRAC - CHT Practice](http://www.spoj.com/problems/CHTPRAC/). একই সাথে ৪টা Variation ই Test করে দেখতে পারবেন। :slightly_smiling_face:     
@@ -411,7 +421,7 @@ for(int k = 2; k <= K; k++) {
 
 $$m_1 = -(1 + 1) = -2, m_2 = -3, \cdots, m_i = -i-1$$
 
-মানে Slope Deacreasing। আগের প্রবলেম এ আমাদের মূল Array তে Negative Number থাকতে পারত, কিন্তু এই প্রবলেম তা সব নাম্বার Positive। এজন্য যেকোনো $p_i \leq p_{i+1}$। আর আমরা যেহেতু $p_i$ দিয়ে Query করছি তাই Query গুলা Increasing Order এ আছে। এক্ষেত্রে আমরা উপরে দেখানো Approach 3 এর মত করে Query করে $O(1)$ Amortized Complexity পেতে পারি।    
+মানে Slope decreasing আগের প্রবলেম এ আমাদের মূল Array তে Negative Number থাকতে পারত, কিন্তু এই প্রবলেম তা সব নাম্বার Positive। এজন্য যেকোনো $p_i \leq p_{i+1}$। আর আমরা যেহেতু $p_i$ দিয়ে Query করছি তাই Query গুলা Increasing Order এ আছে। এক্ষেত্রে আমরা উপরে দেখানো Approach 3 এর মত করে Query করে $O(1)$ Amortized Complexity পেতে পারি।    
 
 তাহলে মোট Complexity $O(NK)$  
 
