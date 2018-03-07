@@ -376,7 +376,7 @@ void ifft(ValComplex &p) {
 vector<int> multiply(vector<int> a, vector<int> b) {
   int n = a.size(), m = b.size();
   int t = n + m - 1, sz = 1; // t is degree of R
-  while(sz < t) sz &lt;&lt;= 1;  // rounding to nearest 2^x
+  while(sz < t) sz <<= 1;  // rounding to nearest 2^x
 
   ValComplex x(sz), y(sz), z(sz);
   // Resize first polynomial by inserting 0.
